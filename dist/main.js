@@ -1,0 +1,1 @@
+(()=>{"use strict";var s=new class{test(){return"this is test1qweasd.js file"}};console.log(s.test())})();

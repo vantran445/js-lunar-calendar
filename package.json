@@ -1,0 +1,31 @@
+{
+  "name": "js-lunar-calendar",
+  "version": "1.0.0",
+  "description": "Lunar Calendar by Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vantran445/js-lunar-calendar.git"
+  },
+  "keywords": [
+    "js",
+    "lunar",
+    "calendar"
+  ],
+  "author": "Cao Van Tran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vantran445/js-lunar-calendar/issues"
+  },
+  "homepage": "https://github.com/vantran445/js-lunar-calendar#readme",
+  "type": "module",
+  "devDependencies": {
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0"
+  }
+}
