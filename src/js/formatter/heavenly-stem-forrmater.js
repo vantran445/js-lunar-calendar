@@ -2,7 +2,8 @@ import TermFormatter from "./term-formatter.js";
 
 class HeavenlyStemFormatter extends TermFormatter
 {
-    term_keys = ['giap', 'at', 'binh', 'dinh', 'mau', 'ky', 'canh', 'tan', 'nham', 'quy'];
+    term_keys   = ['giap', 'at', 'binh', 'dinh', 'mau', 'ky', 'canh', 'tan', 'nham', 'quy'];
+    term_labels = [];
 
     constructor(offset)
     {
