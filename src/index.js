@@ -1,4 +1,4 @@
-import Test1 from './js/test1.js';
+import LunarDateTime from "./js/lunar-date-time.js";
 
 /**
  * Translate
@@ -21,5 +21,20 @@ function trans(key)
     }
 }
 
-var t = new Test1();
-console.log(t);
+var lunar = new LunarDateTime(17, 9, 2021, 0, 0, 0, 7);
+//console.log(lunar);
+console.log(lunar.format('d/m/Y H:i:s j z l'));
+
+class ABC
+{
+    abf = [1,2,3];
+}
+
+class DEF
+{
+    abf = [4, 5, 6]
+}
+
+let t = new DEF();
+
+console.log(t.abf[0]);

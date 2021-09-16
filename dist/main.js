@@ -1,1 +1,1 @@
-(()=>{"use strict";var s=new class{test(){return"this is test1qweasd.js file"}};console.log(s.test())})();
+(()=>{"use strict";class e extends Date{}var s=new e;console.log(s.getDate())})();
