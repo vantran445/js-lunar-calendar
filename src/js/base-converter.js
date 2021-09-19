@@ -60,4 +60,41 @@ export function jdToSunlongitude(jd, timezone = 0)
     return sl;
 }
 
+/**
+ * Convert a Julian Day Count to Gregorian Date time object
+ * 
+ * @param float jd 
+ * @returns object
+ */
+export function jdToGregorian(jd)
+{
+    let mainJdDay = floor(jd);
+    let subJdDay  = jd - mainJdDay;
+
+    let a, b, c, d, e, m, s = 0;
+
+    if(mainJdDay > 2299160) {
+        a = mainJdDay + 32044;
+        b = floor((4 * a + 3) / 146097);
+        c = a - floor((b * 146097) / 4);
+    }
+    else {
+        c = mainJdDay + 32082;
+    }
+
+    d = floor((4 * c + 3) / 1461);
+    e = c - floor((1461 * d) / 4);
+    m = floor((5 * e + 2) / 153);
+    s = floor(subJdDay * 3600 * 24) + 1;
+
+    return {
+        d: floor(e - floor((153 * m + 2) / 5) + 1),
+        m: floor(m + 3 - 12 * floor(m / 10)),
+        Y: floor(b * 100 + d - 4800 + floor(m / 10)),
+        H: (s / 3600) % 24,
+        i: (s / 60) % 60,
+        s: s % 60
+    };
+}
+
 

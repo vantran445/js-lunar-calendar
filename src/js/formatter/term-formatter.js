@@ -1,7 +1,8 @@
+import JsLunarTranslator from "../translator.js";
+
 class TermFormatter
 {
-    term_keys      = ['key_1', 'key_2', 'key_3'];
-    term_labels    = ['Label 1', 'Lable 2', 'Label 3'];
+    term_keys = ['key_1', 'key_2', 'key_3'];
 
     constructor(offset)
     {
@@ -22,7 +23,7 @@ class TermFormatter
      * @returns string
      */
     getKey() {
-        return (this.term_keys[this.offset != undefined])
+        return (this.term_keys[this.offset] != undefined)
                         ? this.term_keys[this.offset]
                         : '_key_' + this.offset;
     }
@@ -33,18 +34,7 @@ class TermFormatter
      * @returns string
      */
     getLabel() {
-        if(window.trans != undefined) {
-            let trans = window.trans;
-            let key   = this.getKey();
-
-            if(trans[key] != undefined ) {
-                return trans[key];
-            }
-        }
-
-        return (this.term_labels[this.offset] != undefined)
-                        ? this.term_labels[this.offset]
-                        : this.getKey();
+        return (new JsLunarTranslator()).trans(this.getKey());
     }
 
 }

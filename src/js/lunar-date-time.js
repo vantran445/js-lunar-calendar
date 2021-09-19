@@ -2,7 +2,7 @@ import { floor, jdToSunlongitude, gregorianToJd } from './base-converter.js';
 
 class LunarDateTime
 {
-    constructor(d, m, Y, H = 0, i = 0, s = 0, timezone = 0)
+    constructor(d, m, Y, H = 0, i = 0, s = 0, timezone = 7)
     {
         this.input = {
             d: d, m: m, Y:Y, H: H, i: i, s: s, timezone: timezone

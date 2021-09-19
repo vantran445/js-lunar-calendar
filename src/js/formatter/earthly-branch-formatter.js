@@ -6,15 +6,12 @@ class EarthlyBranchFormatter extends TermFormatter
 
     constructor(offset)
     {
-        try {
-            if(offset < 0 || offset > 11) {
-                throw 'The offset of Earthly branch should be 0 through 11.';
-            }
-            
-            super(offset);
-        } 
-        catch (error) {
-            console.error(error);
+        if(offset < 0 || offset > 11) {
+            throw 'The offset of Earthly branch should be 0 through 11.';
         }
+        
+        super(offset);
     }
 }
+
+export default EarthlyBranchFormatter;

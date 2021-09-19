@@ -1,29 +1,18 @@
 import LunarDateTime from "./js/lunar-date-time.js";
+import LunarSexagenary from "./js/lunar-sexagenary.js";
+import SolarTerm from "./js/solar-term.js";
 
-/**
- * Translate
- * 
- * @since 1.0
- * @param {string} key Key to check and translate
- */
-function trans(key)
-{
-    let trans = window.trans;
+let d = 18;
+let m = 9;
+let Y = 2021;
+let H = 0;
+let i = 0;
+let s = 0;
+let timezone = 7;
+let sexagenaryFromat = '{Ngay} D d, {thang} M m, {nam} Y y, {gio} H h';
 
-    if(typeof trans == undefined) {
-        return key;
-    }
+let solarTerm = new SolarTerm(d, m, Y, H, i, s, timezone);
 
-    if(key in trans) {
-        return trans[key];
-    }
-    else {
-        return key;
-    }
-}
-
-var lunar = new LunarDateTime(17, 9, 2021, 0, 0, 0, 7);
-//console.log(lunar);
-console.log(lunar.format('d/m/Y H:i:s j z l'));
-
-console.log(trans('earthly_stem_0'));
+console.log(solarTerm.getTerm().getLabel());
+console.log(solarTerm.getBeginDateTime());
+console.log(solarTerm);
